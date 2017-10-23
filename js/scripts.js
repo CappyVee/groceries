@@ -27,17 +27,36 @@
 //   });//end submit function
 // });//ready function end
 
+// $(document).ready(function(){
+//   $("#formGroc").submit(function(event){
+//     var grocList = ["grocFirst", "grocSecond", "grocThird", "grocFourth", "grocFifth"];
+//     var grocListBig = grocList.map(function(groc){
+//       return $("input#" + groc).val().toUpperCase();
+//     });//map function end
+//     grocListBig = grocListBig.sort();
+//     grocListBig.forEach(function(groc){
+//       $(".display").append("<li>" + groc + "</li>");
+//     });//end forEach function
+//     $("#formGroc").hide();
+//     event.preventDefault();
+//   });//submit function
+// });// doc ready function end
+
 $(document).ready(function(){
   $("#formGroc").submit(function(event){
     var grocList = ["grocFirst", "grocSecond", "grocThird", "grocFourth", "grocFifth"];
-    var grocListBig = grocList.map(function(groc){
-      return $("input#" + groc).val().toUpperCase();
-    });//map function end
-    grocListBig = grocListBig.sort();
-    grocListBig.forEach(function(groc){
-      $(".display").append("<li>" + groc + "</li>");
-    });//end forEach function
-    $("#formGroc").hide();
+    var grocListNew = [];
+
+    grocList.forEach(function(groc){
+      grocListNew.push("input#" + groc);
+
+      });//forEach function
+      grocListNew = grocListNew.sort();
+      grocListNew.forEach(function(groc){
+        $(".display").append("<li>" + groc + "</li>");
+      });
+
+
     event.preventDefault();
-  });//submit function
-});// doc ready function end
+  });
+});

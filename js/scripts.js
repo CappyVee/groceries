@@ -48,15 +48,16 @@ $(document).ready(function(){
     var grocListNew = [];
 
     grocList.forEach(function(groc){
-      grocListNew.push("input#" + groc);
+      var inputValue = $("input#" + groc).val();
+      grocListNew.push(inputValue);
 
-      });//forEach function
+    });//forEach fxn end
       grocListNew = grocListNew.sort();
       grocListNew.forEach(function(groc){
         $(".display").append("<li>" + groc + "</li>");
-      });
+      });//forEach fxn end
 
 
     event.preventDefault();
-  });
-});
+  });//submit fxn end
+});//ready fxn end
